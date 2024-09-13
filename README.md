@@ -26,8 +26,6 @@
 - `imprimir()`
 - `inserirNoFim(Celula celula)`
 
-**Main**:
-- `main(String[] args)`
 
 **No**:
 - `No(String palavra, int linha)`
