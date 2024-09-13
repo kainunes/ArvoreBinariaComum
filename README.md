@@ -41,7 +41,7 @@
 
 **Classes ArvoreBinaria, No, Principal** - Paulo, Luan, Kaique
 
-**Classe LeitorArquivo  - Vinicius, Dandara
+**Classe LeitorArquivo**  - Vinicius, Dandara
 
 **Classe ListaSE** - Karen, Vinicius
 
