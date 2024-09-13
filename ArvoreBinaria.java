@@ -1,77 +1,65 @@
+/**
+ * Classe que representa uma árvore binária de busca.
+ */
 public class ArvoreBinaria {
     No raiz;
-    public ArvoreBinaria(){ raiz = null; }
+
+    /**
+     * Construtor para inicializar uma árvore binária vazia.
+     */
+    public ArvoreBinaria() {
+        raiz = null;
+    }
+
+    /**
+     * Método privado para inserir um novo nó na árvore binária.
+     *
+     * @param novo   O novo nó a ser inserido.
+     * @param atual  O nó atual onde a comparação é feita.
+     * @return O nó atualizado após a inserção.
+     */
     private No inserirNovo(No novo, No atual) {
         No aux;
         if (atual == null) {
             return novo;
         }
-        if (atual.palavra.compareTo(novo.palavra)>0) {
+        if (atual.palavra.compareTo(novo.palavra) > 0) {
             atual.esquerda = inserirNovo(novo, atual.esquerda);
-        } else if (atual.palavra.compareTo(novo.palavra)<0) {
+        } else if (atual.palavra.compareTo(novo.palavra) < 0) {
             atual.direita = inserirNovo(novo, atual.direita);
-        } else{
+        } else {
             atual.inserirLinha(novo.linha);
         }
         return atual;
     }
+
+    /**
+     * Insere um novo nó na árvore binária.
+     *
+     * @param novo O nó a ser inserido.
+     */
     public void inserir(No novo) {
         raiz = inserirNovo(novo, raiz);
     }
 
-//    private No pesquisarNo (No atual, int valor) {
-//        No aux = null;
-//        if(atual == null) {
-//            aux = null;
-//        }
-//        assert atual != null;
-//        if(atual.valor == valor) {
-//            aux = atual;
-//        }
-//        if(atual.valor < valor) {
-//            pesquisarNo(atual.direita, valor);
-//        }
-//        if(atual.valor > valor) {
-//            pesquisarNo(atual.esquerda, valor);
-//        }
-//        return aux;
-//    }
-
-//    public No pesquisar(int valor) {
-//        return pesquisarNo(this.raiz, valor);
-//    }
-//    private void preordem(No elemento) {
-//        if (elemento != null) {
-//            System.out.println(elemento.valor);
-//            preordem(elemento.esquerda);
-//            preordem(elemento.direita);
-//        }
-//    }
-
-//    public void imprimirPreordem() {
-//        preordem(raiz);
-//    }
+    /**
+     * Método recursivo privado para imprimir as palavras em ordem.
+     *
+     * @param elemento O nó atual.
+     */
     private void ordem(No elemento) {
         if (elemento != null) {
             ordem(elemento.esquerda);
-            System.out.println(elemento.palavra);
+            System.out.printf(elemento.palavra);
+            elemento.linhas.imprimir();
             ordem(elemento.direita);
         }
     }
 
+    /**
+     * Imprime as palavras armazenadas na árvore em ordem.
+     */
     public void imprimirOrdem() {
         ordem(raiz);
     }
-//    private void posordem(No elemento) {
-//        if (elemento != null) {
-//            posordem(elemento.esquerda);
-//            posordem(elemento.direita);
-//            System.out.println(elemento.valor);
-//        }
-//    }
-//
-//    public void imprimirPosordem() {
-//        posordem(raiz);
-//    }
-
 }
