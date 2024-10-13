@@ -1,7 +1,7 @@
 # Grupo 3 - Dandara, Kaique, Karen, Vinícius, Luan, Paulo
 
 
-
+Repositório para Trabalho Pratico da disciplina "Programação III", ofertada no IFMG Campus Sabará
 ### Classes e métodos do projeto:
 
 **ArvoreBinaria**:
